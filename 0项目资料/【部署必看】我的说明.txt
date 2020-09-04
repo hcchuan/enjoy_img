@@ -1,0 +1,26 @@
+--------------------------------------------安装注意事项
+----本代码系响应式布局，兼容手机端
+----源码包已安装好了laravel（laravel版本：5.3.30），无需再安装，即不用执行 i: & cd I:\work\project\php\enjoy_img;composer i
+----站点根目录指向源码包根目录，不指向public目录
+----手动创建数据库并导入脚本yunziyuan.sql，然后修改.env中的数据库连接
+----php.ini找到extension=php_exif.dll，去掉前面的注释，否则上传报错“exif_read_data方法不存在”
+----图片上传大小限制在后台设置：http://img.local.com/panel/admin/settings/limits，若要增加更多选项，则在\resources\views\admin\limits.blade.php中配置
+----图片分类在后台设置：http://img.local.com/panel/admin/categories
+--------------------------------------------重要文件
+----路由文件：\routes\下
+----图片上传目录：\public\uploads
+----页面模板：\resources\views\下
+如：上传图片的模板文件为：\resources\views\images\upload.blade.php
+----controller目录：\app\Http\Controllers\
+如：上传图片的方法为：\app\Http\Controllers\ImagesController.php中的create方法
+--------------------------------------------重要网址
+----前台首页
+http://img.local.com/index.php
+
+----前台登录页
+http://img.local.com/login
+
+----后台
+http://img.local.com/panel/admin
+admin  123456
+

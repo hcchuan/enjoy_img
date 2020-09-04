@@ -1,0 +1,76 @@
+<?php 
+
+return array(
+
+	/*
+	|--------------------------------------------------------------------------
+	| Users Language Lines
+	|--------------------------------------------------------------------------
+	|
+	*/
+	'likes'					    =>		'喜欢',
+	'favorites'					=>		'收藏',
+	'freelancers'			    =>		'Freelancers',
+	'follow'					=>		'关注',
+	'followers'					=>		'关注Ta',
+	'following'					=>		'关注',
+	'messages'					=>		'信息',
+	'notifications'			    =>		'通知',
+	'account_settings'			=>		'账号设置',
+	'my_profile'                =>      '我的资料',
+	'logout'                    =>      '退出',
+	'stats'                     =>      '统计',
+	'edit_profile'              =>      '编辑资料',
+	'send_message'              =>      '发送信息',
+	'hire_me'                   =>      'Hire me',
+	'report_user'               =>      '举报垃圾邮件',
+	'block_user'                =>      '屏蔽用户',
+	'about_me'                  =>      '关于我',
+	'no_members_found'          =>      '没有发现会员',
+	'edit'					    =>		'编辑',
+	'delete'				    =>		'删除',
+	'cancel'				    =>		'取消',
+	'ok'                        =>      '好的',
+	'save'				        =>		'保存',
+	'account_profile'           =>      '资料',
+	'go_to_profile'             =>      '前往个人资料',
+	'delete_account'            =>      '删除我账号',
+	'settings'                  =>      '设置',
+	'title_email_verify'        =>      '验证你的电子邮件',
+	'text_email_verify'         =>      '谢谢你注册账号，请按照下面链接来验证你的电子邮件',
+	'you_are_following'         =>      'has started following you',
+	'account_validated'         =>      '你的账号已经成功验证',
+	'code_not_valid'            =>      '代码确认无效!',
+	'followed_you'              =>      '关注了你',
+	'members'                   =>      '会员|信息',
+	'name'                      =>      '名称',
+	'create'                    =>      'Create',
+	'lists_members'             =>      '会员列表',
+	'add_members'               =>      '添加信息',
+	'done'                      =>      '完成',
+	'send_msg_private'          =>      '发送给你一条信息',
+	'unblock'                   =>      '屏蔽',
+	'click_below_email'         =>      '你可以通过下面链接确认你的电子邮件:',
+	'confirm_my_account'        =>      '确认我的账号',
+	'see_your_followers'        =>      'See your followers',
+	'find_users'                =>      '找到用户',
+	'back_to_messages'          =>      '回复信息',
+	'account_normal'            =>      '账号支持',
+	'free'                      =>      '免费',
+	'create_account'            =>      '创建账号',
+	'yearly'                    =>      '明年',
+	'admin'                     =>      '管理员',
+	'add_by_admin'              =>      'has added you as Admin',
+	'user_suspended'            =>      'This user has been suspended',
+	'registered'                =>      '注册',
+	'dashboard'                 =>      '仪表盘',
+	'upload'                    =>      '上传',
+	'comment_you_photo' => '评论了你的照片',
+	'like_you_photo' => '喜欢了你的照片',
+	'liked_your_comment' => '喜欢你的评论',
+	'delete_all_notifications' => '删除所有通知',
+	'user_no_images' => '没有照片可以显示',
+	
+	
+	
+);
