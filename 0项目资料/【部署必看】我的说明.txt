@@ -7,6 +7,7 @@
 ----图片上传大小限制在后台设置（允许上传的最大大小）：http://img.local.com/panel/admin/settings/limits，若要增加更多选项，则在\resources\views\admin\limits.blade.php中配置
 
 ----图片分类在后台设置：http://img.local.com/panel/admin/categories
+
 --------------------------------------------重要文件
 ----路由文件：\routes\下
 ----图片上传目录：\public\uploads
