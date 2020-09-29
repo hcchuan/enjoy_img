@@ -1,0 +1,15 @@
+--------------------------------------添加
+		$sql = new Images;
+		$sql->title                = trim($request->title);
+		$sql->description          = trim($description);
+		$sql->categories_id        = $request->categories_id;
+		$sql->user_id              = Auth::user()->id;
+		$sql->save();
+--------------------------------------查询单条
+	$categories        = Categories::find( $id );
+
+--------------------------------------修改
+$categories  = Categories::find( $request->id );
+		$categories->name        = $request->name;
+		$categories->slug        = strtolower($request->slug);
+		$categories->save();

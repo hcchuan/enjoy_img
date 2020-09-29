@@ -62,11 +62,29 @@ class AjaxController extends Controller {
 					$notifications->update();
 					}
 				}
+
+            //修改点赞次数
+            $images = Images::find( $request->id );
+            $images->like_num+=$like->status==1?1:-1;
+            if($images->like_num<0)
+            {
+                $images->like_num=0;
+            }
+            $images->save();
 			
 		} else {
 			
 			// INSERT
 			$like->save();
+
+			//修改点赞次数
+            $images = Images::find( $request->id );
+            $images->like_num+=1;
+            if($images->like_num<0)
+            {
+                $images->like_num=0;
+            }
+            $images->save();
 			
 			// Send Notification //destination, author, type, target
 			if( $user->user_id != Auth::user()->id ) {
