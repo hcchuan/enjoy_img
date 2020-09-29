@@ -1,17 +1,17 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : localhost
+ Source Server         : 123.56.223.242
  Source Server Type    : MySQL
- Source Server Version : 80019
- Source Host           : localhost:3306
+ Source Server Version : 50649
+ Source Host           : 123.56.223.242:3306
  Source Schema         : enjoy_img
 
  Target Server Type    : MySQL
- Target Server Version : 80019
+ Target Server Version : 50649
  File Encoding         : 65001
 
- Date: 04/09/2020 14:23:18
+ Date: 29/09/2020 13:45:49
 */
 
 SET NAMES utf8mb4;
@@ -22,23 +22,23 @@ SET FOREIGN_KEY_CHECKS = 0;
 -- ----------------------------
 DROP TABLE IF EXISTS `admin_settings`;
 CREATE TABLE `admin_settings`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `description` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `welcome_text` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `welcome_subtitle` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `keywords` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `result_request` int(0) UNSIGNED NOT NULL COMMENT 'The max number of images per request',
-  `limit_upload_user` int(0) UNSIGNED NOT NULL,
+  `result_request` int(10) UNSIGNED NOT NULL COMMENT 'The max number of images per request',
+  `limit_upload_user` int(10) UNSIGNED NOT NULL,
   `status_page` enum('0','1') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '1' COMMENT '0 Offline, 1 Online',
-  `message_length` int(0) UNSIGNED NOT NULL,
-  `comment_length` int(0) UNSIGNED NOT NULL,
+  `message_length` int(10) UNSIGNED NOT NULL,
+  `comment_length` int(10) UNSIGNED NOT NULL,
   `registration_active` enum('0','1') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '1' COMMENT '0 No, 1 Yes',
   `email_verification` enum('0','1') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '0 Off, 1 On',
   `email_no_reply` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `email_admin` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `captcha` enum('on','off') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'on',
-  `file_size_allowed` int(0) UNSIGNED NOT NULL COMMENT 'Size in Bytes',
+  `file_size_allowed` int(10) UNSIGNED NOT NULL COMMENT 'Size in Bytes',
   `facebook_login` enum('on','off') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'off',
   `google_analytics` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `invitations_by_email` enum('on','off') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'on',
@@ -49,10 +49,10 @@ CREATE TABLE `admin_settings`  (
   `instagram` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `google_adsense` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `auto_approve_images` enum('on','off') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'off',
-  `tags_limit` int(0) UNSIGNED NOT NULL,
+  `tags_limit` int(10) UNSIGNED NOT NULL,
   `downloads` enum('all','users') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'all',
   `google_ads_index` enum('on','off') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'off',
-  `description_length` int(0) UNSIGNED NOT NULL,
+  `description_length` int(10) UNSIGNED NOT NULL,
   `min_width_height_image` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
 ) ENGINE = MyISAM AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
@@ -60,21 +60,21 @@ CREATE TABLE `admin_settings`  (
 -- ----------------------------
 -- Records of admin_settings
 -- ----------------------------
-INSERT INTO `admin_settings` VALUES (1, '佳音布吉—免费高清图片上传下载', '佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 'HD清图片上传下载', '精选海量的高清美图', '高清图片,HD图标,图片上传', 36, 2, '1', 180, 180, '1', '0', '18581281315@163.com', '18581281315@163.com', 'off', 1024, 'off', '', 'off', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vB5z&id=564099222906', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vB5z&id=564099222906', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vB5z&id=564099222906', '', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vB5z&id=564099222906', '', 'on', 3, 'users', 'off', 160, '100x100');
+INSERT INTO `admin_settings` VALUES (1, '高清图片', '佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 'HD清图片上传下载', '精选海量的高清美图', '高清图片,HD图标,图片上传', 36, 2, '1', 180, 180, '1', '0', '18581281315@163.com', '18581281315@163.com', 'off', 2048, 'off', '', 'off', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vB5z&id=564099222906', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vB5z&id=564099222906', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vB5z&id=564099222906', '', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vB5z&id=564099222906', '', 'on', 3, 'users', 'off', 160, '100x100');
 
 -- ----------------------------
 -- Table structure for categories
 -- ----------------------------
 DROP TABLE IF EXISTS `categories`;
 CREATE TABLE `categories`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `slug` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `thumbnail` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `mode` enum('on','off') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'on',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `slug`(`slug`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of categories
@@ -106,43 +106,43 @@ INSERT INTO `categories` VALUES (21, '科学 / 技术', 'science-technology', ''
 -- ----------------------------
 DROP TABLE IF EXISTS `collections`;
 CREATE TABLE `collections`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `user_id` int(0) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) UNSIGNED NOT NULL,
   `title` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `description` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `created_at` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
-  `update_at` timestamp(0) NOT NULL,
+  `update_at` timestamp(0) NOT NULL DEFAULT '0000-00-00 00:00:00',
   `type` enum('public','private') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'public',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `user_id`(`user_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for collections_images
 -- ----------------------------
 DROP TABLE IF EXISTS `collections_images`;
 CREATE TABLE `collections_images`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `collections_id` int(0) UNSIGNED NOT NULL,
-  `images_id` int(0) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `collections_id` int(10) UNSIGNED NOT NULL,
+  `images_id` int(10) UNSIGNED NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `list_id`(`collections_id`, `images_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for comments
 -- ----------------------------
 DROP TABLE IF EXISTS `comments`;
 CREATE TABLE `comments`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `images_id` int(0) UNSIGNED NOT NULL,
-  `user_id` int(0) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `images_id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
   `reply` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `date` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
   `status` enum('0','1') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '1' COMMENT '0 Trash, 1 Active',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `post`(`images_id`, `user_id`, `status`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 4 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of comments
@@ -156,21 +156,21 @@ INSERT INTO `comments` VALUES (3, 22, 5, '111', '2020-09-04 13:33:07', '1');
 -- ----------------------------
 DROP TABLE IF EXISTS `comments_likes`;
 CREATE TABLE `comments_likes`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `user_id` int(0) UNSIGNED NOT NULL,
-  `comment_id` int(0) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `comment_id` int(10) UNSIGNED NOT NULL,
   `status` enum('0','1') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '1' COMMENT '0 trash, 1 active',
   `created_at` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `user_id`(`user_id`, `comment_id`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for countries
 -- ----------------------------
 DROP TABLE IF EXISTS `countries`;
 CREATE TABLE `countries`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `country_code` varchar(2) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   `country_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`id`) USING BTREE
@@ -427,16 +427,16 @@ INSERT INTO `countries` VALUES (242, 'ZW', 'Zimbabwe');
 -- ----------------------------
 DROP TABLE IF EXISTS `downloads`;
 CREATE TABLE `downloads`  (
-  `id` bigint(0) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `images_id` int(0) UNSIGNED NOT NULL,
-  `user_id` int(0) UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `images_id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
   `ip` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `date` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `publicacion_id`(`images_id`) USING BTREE,
   INDEX `usr_id`(`user_id`) USING BTREE,
   INDEX `ip`(`ip`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of downloads
@@ -449,14 +449,14 @@ INSERT INTO `downloads` VALUES (2, 1, 0, '106.120.161.66', '2018-01-12 10:33:33'
 -- ----------------------------
 DROP TABLE IF EXISTS `followers`;
 CREATE TABLE `followers`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `follower` int(0) UNSIGNED NOT NULL,
-  `following` int(0) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `follower` int(10) UNSIGNED NOT NULL,
+  `following` int(10) UNSIGNED NOT NULL,
   `date` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
   `status` enum('0','1') CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL DEFAULT '1' COMMENT '0 Delete, 1 Active',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `follower`(`follower`, `following`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of followers
@@ -468,15 +468,15 @@ INSERT INTO `followers` VALUES (1, 4, 1, '2018-01-13 14:25:11', '1');
 -- ----------------------------
 DROP TABLE IF EXISTS `images`;
 CREATE TABLE `images`  (
-  `id` int(0) NOT NULL AUTO_INCREMENT,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `thumbnail` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `preview` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `title` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `description` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `categories_id` int(0) UNSIGNED NOT NULL,
-  `user_id` int(0) UNSIGNED NOT NULL,
+  `categories_id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
   `date` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
-  `status` enum('active','pending') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'pending',
+  `status` enum('active','pending','hide') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'pending',
   `token_id` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `tags` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `extension` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -484,69 +484,72 @@ CREATE TABLE `images`  (
   `exif` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `camera` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `featured` enum('yes','no') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'no',
-  `featured_date` timestamp(0) NOT NULL,
+  `featured_date` timestamp(0) NOT NULL DEFAULT '0000-00-00 00:00:00',
   `how_use_image` enum('free','free_personal','editorial_only','web_only') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'free',
   `attribution_required` enum('yes','no') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'no',
   `original_name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
+  `like_num` int(11) NOT NULL DEFAULT 0 COMMENT '点赞次数',
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `token_id`(`token_id`) USING BTREE,
   INDEX `author_id`(`user_id`, `status`, `token_id`) USING BTREE,
   INDEX `image`(`preview`) USING BTREE,
   INDEX `category_id`(`categories_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 22 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 26 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of images
 -- ----------------------------
-INSERT INTO `images` VALUES (1, '1515813379133-11515813413mcdoe1fjrp.jpg', '1515813379133-11515813413fyysaasppw.jpg', '1515813379133', '', 13, 1, '2018-01-13 11:16:56', 'active', 'D8trlJmBk3Mo6ZvSBDnP8ANS001KDHilceFrEX4o6GOcSrf95b0Eea3c9FwLmNfz8Yp9PRBkFbEh46CTh3DaaOQbLAP1v7Na4oLBLAj2frdjO3BpE5ibDBzr1apJWxbYlKHDZSPOSxW0cA5TSQXdFv3Cp9Ek7IgKv1FCLcUPhM6Jv9EXL1jOR72PIWjSf4cMHzj3jphg', '77', 'jpg', '7275EA,CBB1FB,EA8A71,573C5B,8C6A69', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '1515813379133');
-INSERT INTO `images` VALUES (2, '-115158135380eb2dw90my.jpg', '-11515813538uczijpxr2z.jpg', '上海哦哦哦', '', 13, 1, '2018-01-13 11:19:01', 'active', 'ajclC9XmVjVuJTEyBGE7HXfHtS5GEGrX0dgvA7hLn8L0wdAlmZQwOGuGiDpMmIxZq2zs4tA4LNbBCL34JZR28xk6HHr7zJbkKzNRpDnRO8V91CE4vNQvXLZrEvXF6GbYfBoQcRjn6WtcOcyRZFtwNUGQOVxDTFHEvChOem2C3rSXiKuvV9rWhZrPW6wZrbJ7sGLCsI9A', '7788', 'jpg', '0A2037,022A9B,984FC5,F786EE,E86D0F', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '上海哦哦哦');
-INSERT INTO `images` VALUES (3, '-11515815836y8xz84r2qe.jpg', '-11515815836ikxjihwgk2.jpg', '北极的冰天雪地', '', 13, 1, '2018-01-13 11:57:18', 'active', 'nsofbUHeq1cfTV7BzRXbkid4V5KI1sNZIlfmTSkZc6pAnBub9BWgin6bxjZGLxAoi3GP6u6A5GFlWFrVyD8Ce6cDxOovCLIg8X0H7TcN5PPBYmNtq8E1eXMLplmDNIkuMSSr9KRnjQk0MFkeRQcqw2CnodPdpkLp5mUogWjkppJQYKH8y9F5tJPUynCmpgujS7WOMoHM', '冰天雪地', 'jpg', '689ABD,004DB9,CAE6EA,00045F,DA0404', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '北极的冰天雪地');
-INSERT INTO `images` VALUES (4, '-11515822626hxpply1ixf.jpg', '-115158226264fddpvmvnr.jpg', '北极风光图片', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:50:29', 'active', 'zh0MSm4jic3PLG9ycgBN7af70FO0T3LI1BhxbXOWQ7TRFgFIlO0iXUxiW7CeAIRNFcPlF6uvNLGpNjUHb7SDCQEUSnSjBgkgNmr3naGFKmEPUDggsE9mhHWpk1BJXxqFY6ysgZ9SJeoN8pcXgTtfK0bXQqKB1Fhw7MCfZqaHfPyRrQSSeimQ2MonUdjoxVkeLTVGax3u', '北极', 'jpg', '44558B,0B0D19,36656F,8C6441,C0B77E', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '北极风光图片');
-INSERT INTO `images` VALUES (5, '-11515822693nekqp7tfx1.jpg', '-11515822693dtazp6nsw4.jpg', '草丛里的蘑菇', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:51:37', 'active', 'M4OxbMgCIqpo3AE7VvS40Y8V1GeYJefElF9Fn2AE4um4oDzN6A8COMTK5anwMDdl4QKIdwpS73jEJsYDnUJc2UXQCwPhZAPEFDeqWmRoN2LrKXmEShszk20e63SnIreBdVcyPpG0Z97tqIuga0GO32fFtq3OM0nTG8APmsaehHdRdn93hFLHTE9PFP9v1HtNTgw2RMsX', '蘑菇', 'jpg', '447B03,DAC900,1E3D02,593712,70BA4B', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '草丛里的蘑菇');
-INSERT INTO `images` VALUES (6, '-11515822733gqctyfzilx.jpg', '-11515822733m9h83udzqb.jpg', '大自然风景', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:52:16', 'active', 'ufQN5AmRvOxZI2KcRBLHoHFyaVoej9kPimoNDGnYMr8CS94YH7iR1xN10TVgS4XGlTQVwlyCOwqxd30D3zkEHZcIlqhi3dK2ZQR4DUioUYIQhFb4WKffDwQwJmoGLccnaGWF0a5CdC08YZeEwgPjtMdR51dsxXJ0qPmfKiDkO9eADtJMou7YQOCGAehIFiLjfe80XQCA', '大自然', 'jpg', '8AA9D7,344767,D03612,650F0E,6A4A19', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '大自然风景');
-INSERT INTO `images` VALUES (7, '-11515822780bq7o4ukxhn.jpg', '-11515822780yxef4m5no1.jpg', '非常漂亮的大峡谷', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:53:03', 'active', 'zaMj2liBZExNZGfHuQtLmUbdyEWJHKQJHBbtWLLd90ij59UJ2xO2VOAKaevTXRFNtL8I7XpCwQB8SbLYBxplBlrv2xBuXtPMHyB3WrpYTBjxgTlRNN4mhs37XFZHcXuQDa9JVozRULD2hRviGsEXbUM04UbE6830cKVwA1mI0ORz1aKDVxN2NvKeud8AAAp171Gjhhiy', '大峡谷', 'jpg', '4591EF,053566,324B2E,7B893E,AFC7ED', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '非常漂亮的大峡谷');
-INSERT INTO `images` VALUES (8, '-115158228792it5y7fcp1.jpg', '-11515822879dnkjdwjctx.jpg', '好看大海沙滩', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:54:43', 'active', 'xes6VwYkor4ZlTvfjzMMJtgI0PRgeGkehuHumekYTsud3miHHVtR1xSOHo4nM1HS32xUsnbxCVlDoxCY2pzr121tRHzNTNDHXKP4xqPSJYWMg9nVwIHHyxysDVUL7WwILTdO6FKjJsyWslkz0NJb95SyMcMhyz1c5n8A86c7schiE56gMMiJz6AKbyHCKzvHDRAN3Zts', '沙滩', 'jpg', '138AA8,1E5F95,424C2A,C1BBA1,2A303C', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '好看大海沙滩');
-INSERT INTO `images` VALUES (9, '-11515822953rcuqvxlolt.jpg', '-11515822953i8ekcwf84o.jpg', '好看的松鼠风景图片', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:55:55', 'active', 'sqMeQAcqApfCGOPC0NqPPyB3oWbxtRAYSsp5cih8RfiDI9NcZDfsImXzmXGE7YUAAty9wj0qVtTlSzA18VEfGKz2o2p6mrxMsKIlRuQmPBciVqBZRSu6nBE8EgBc1zqZUjXZDlb6qOSkC5UCmRaMMCSkXcfjo8SuI8IxlHu3ifJ5IXyrfJKUeHLlReWuxI4nDefY230c', '松鼠', 'jpg', '888343,AF9B94,875524,391600,FAD5A8', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '好看的风景图片');
-INSERT INTO `images` VALUES (10, '-11515822998lqta4sa6kg.jpg', '-11515822998t3curomwhu.jpg', '蓝天白云下的植物', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:56:41', 'active', 'JY9rk12lBCYZseHDb3tHd9X5bQUHD7G7kyvtLL2pkk2Baf6n9ASEFKyQoWJlUEFQxUOCib63kPxqDD01GBi3FeNBUafkPkAXYENaeEVBsWahRd69aIeBMlwHHDqZmXhq0c6XlzkcNW1QbPBtCmk8LCkyGrN3oJ5Ed1yeBDKSj2f4NsHEdru7gwersUJGMwuWGcJcQFuv', '植物', 'jpg', '66A8F4,3870CF,436D21,BEC517,F8F2DC', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '蓝天白云下的植物');
-INSERT INTO `images` VALUES (11, '-11515823043cqvojypkat.jpg', '-115158230431srrklyqkv.jpg', '蓝天白云与大海', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:57:31', 'active', 'vPbBX8z0Ssawug6xpUgbNXUldiy5CI7pylXF4MGICbQkisQz59zlTdLFFBSBbwINnsp75JC6t3v1OcvH45byWBdHn0NvhbhkO8F0iDXVLxieF6vSdtfgmrEzxGfAq2eyBs3vhSrgGMnTEYHOCDZwFH4ZledgXGNNPPFg1O5TV3xLaFUGecnW4wSvxLCZPjYgpd6Kos3j', '大海', 'jpg', '7394DB,2B5C85,081639,C7A7BF,866F5F', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '蓝天白云与大海');
-INSERT INTO `images` VALUES (12, '-11515823091jars4fn0dk.jpg', '-11515823091ezmqq03hkm.jpg', '美丽的大峡谷', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:58:15', 'active', 'PteBCYFTlQzerdXR2vYPe91sGWbwcQzaOOqcipCoUbXYS5xLkZ04mNFZV6N8fOCbtBcrgfldwQTZtNq982ptCgVVpHZusv4VG1gPoRFLgu0ybs2gBV16uFh3rCBncpBV9GP8Cq0d17D2brXz8ARI6BBC8RelhcaJ0Zx3AwNcX2UYOVnKeC5ko1uUEDK09KQ34k34BEc3', '大峡谷', 'jpg', 'C2CBDA,949025,473100,000417,34416B', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '美丽的大峡谷');
-INSERT INTO `images` VALUES (13, '-11515823149sagpb0qfrw.jpg', '-11515823149ximkeg1pbe.jpg', '美丽的大自然风光', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:59:18', 'active', '49Ft4jdxQklX2XI6PHQezDHvzSdYMc8UDF94h04R641JFAzN3IexgmjK5ndJjiJjnRb79nKY0B1gnTv4kK5wQtS8XDSdVC6ycolAMvYFCrlTT2TQ8GuV8QsxN2W4UsPNVPKs7U6xprOYKbEGOvcNhM3sVLxTnhLXO4KpCrvoZBoGIuTSCCaokaNPO0BRCYrbJ1pIHkKm', '大自然', 'jpg', '7E7BAA,CACDF0,0E0B28,D68872,955049', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '美丽的大自然风光');
-INSERT INTO `images` VALUES (14, '-11515823198iockxbkqaz.jpg', '-11515823198oxyf6aadnt.jpg', '美丽的星空', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 11, 1, '2018-01-13 14:00:00', 'active', 'FhYF4T9NZwcNszIaYh4FJRMkhyUYuJfl3hSuWwHc2qFVquKvS52cbGUxwDAOd8YEGgrziqPcXoTLyxYwpjXExz3oqxcgmtsXdD8hxsFw7ZPhdzhGbOTwbv7nFVvKjwosffKiDTAb3vZ5WKdcCENe8sgAx3i76kB4jINZRwJUAlNyZF4XEJBxl7oAJNgNQAPsU2SiKvbg', '星空', 'jpg', '473370,8E6D9A,C06C3D,7F3E2C,31051E', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '美丽的星空');
-INSERT INTO `images` VALUES (15, '-11515823238xxooj2iq5o.jpg', '-11515823238wudfvj6lmj.jpg', '树丛里面的蘑菇', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 14:00:42', 'active', '8SXDvbhnuDet9CvLFzmVaY3VTS9GuYpPIw3nT85nwpuallCw9cNaK5pUrTEfrhoMuekYhHT6gH4joZqi7jnHiOqqp5bYmRNCgQbfxtdZT8XGdfkMp0IZSGACanHByzbjqmTufWx5Yfaa90XsAnkBqQXX8g5fEiZrFc3hdswKbU9hXJdYAxE5FiNQiVNojbSkhkzJsazb', '蘑菇', 'jpg', '7FAE7A,4E7340,D87404,A93C13,2A3827', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '树丛里面的蘑菇');
-INSERT INTO `images` VALUES (16, '-11515823277atfsw28j6a.jpg', '-11515823277yn8qjyhkpp.jpg', '夕阳西下的草地', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 14:01:21', 'active', 'aJcUFf5FLPOKawoGAFSjYY40E6juDXAFuIjYXoDFIVRnXFqT4hBtAVCPBV4TK23wdBQB2mGzfl7RdHXsnXMJ3V1SBv6XvGYiZn0AQRd3nIFkdRHsRGG8jC5KnT88pXQBu1ntvezy49NcyPzjz4RHpMiZBEBgZJOnoYRQZ8BH7ym9TJ6281SLfwUELl9jmSEOUqcg7EcQ', '草地', 'jpg', '2780D0,FEC425,505F02,F29A68,632300', '', '', 'yes', '2018-01-13 06:47:10', 'free', 'no', '夕阳西下的草地');
-INSERT INTO `images` VALUES (17, '-11515823318sezzuaty6a.jpg', '-11515823318qsumy71qah.jpg', '一望无际的大草原', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 14:02:01', 'active', 'DoUQtMQ7CVnEd1R3CIM26LJ7J182tbUio8QrXCS2zPiJY7Ay3is6BaCztVuaqsksWaEcAS5ZQwGZgjxFTLabVPA3RiV3Ql0JQRQ2sVd8C4hKS3vTAZsRwA32E3fSNVGzRWBDOHPDMH2y7CIhx0UaWUxUtVuAYMN1q6MaEY91IuvQjAPmN6BvXXgHiVeQutgXNDfwpOpH', '草原', 'jpg', 'BDC615,2B4504,3384D5,6D7F11,012B41', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '一望无际的大草原');
-INSERT INTO `images` VALUES (18, '-115158233500ze2xx7yrf.jpg', '-11515823350ohl08euevc.jpg', '中国南沙群岛', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 14:02:32', 'active', 'tZK2ktJcAQXTYhD2f6ldC6S3JNOY8scR7KtoulGp1BzXpd9X5awv7iAErXs0sDpIKWkF1gH4exBqVj8CQIuXwggfAathtYIRetDD6YWqiiAvlyWkX4Yma5Or8qsDMvkkKmbO8ofbVx25vClpjN3smeCrMqxeuLwQLvrCdUWvBPQwS2gS4jjAQNUzzKETSmIsexkMOMf3', '南沙群岛', 'jpg', '1B52AD,091A48,5488D1,1C526C,509167', '', '', 'yes', '2018-01-13 06:46:55', 'free', 'no', '中国南沙群岛');
-INSERT INTO `images` VALUES (21, '-11515831707kmxsvvn77n.jpg', '-11515831707b0sm54uloa.jpg', '美丽的乡间小路', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 16:21:51', 'active', 't2yrsRF1quTH8BmHeVx6sOhpG0wNZDA9O68K10KsbuT8EUZLUQ6K3o9YEc1Wx1YbWhoJNiOvALjllMays8q9a6Nd9aKwjJWlUd6oRYDqKM1F0j0PcbhnsvOvkmwOwmIrv9Eg1Ktuo2YmQIEW1zIhRaOoqxpVaYG11W6XrJ7bbg2Z63ZPfViAWeyDCo1eheC9UNyjOZ5R', '乡间小路', 'jpg', '5C96A2,545C11,F0E5C9,81A817,E1B72F', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '1515815321909');
-INSERT INTO `images` VALUES (22, '220x165-0-2013082608552885566-51599197575jyxu2llfv2.jpg', '220x165-0-2013082608552885566-51599197575eql6l3akno.jpg', '220x165_0_2013082608552885566', '', 11, 5, '2020-09-04 13:32:57', 'active', 'yqoWiKjBYMaeoPpFjbs440rhnhuCyXrdt09CudBaZlm3Zgttg5NMxXg1gdZf7sK22yfY2rXUsy7mktML3VogbdHGdnd5Ycm2Fpp33EdsfKzMaRFqsoHgYRiRkem3kigspM0HwXHaywxOveqCF6ELJ57a6mkzkgtGkDl0COZnDlzIAXt97M7s5CFgkwk3Gmgruqw69nRE', 'first', 'jpg', '0A0019,A23A21,E76C4A,4F2026,60A9D2', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '220x165_0_2013082608552885566');
-INSERT INTO `images` VALUES (23, '220x165-0-2013091105023733144-51599199777tvrdpwd5iy.jpg', '220x165-0-2013091105023733144-51599199777hnd9b0hsb7.jpg', '220x165_0_2013091105023733144', '', 11, 5, '2020-09-04 14:09:38', 'active', '98oayBSIfsZpIKVg1hTBCF3IK8BgaOmhX9A5656VHWq9A47SISiCOoaNuptLUmMnL2B1DLsUVUIcSxE9ewN5k99nEDyXEbN81xIvswqWnkpyIKNwD2AcnqlC2NIAHQd5jVGiQT2ECx33el6TBvjUe9HoDA1aAQj3YMKicdlsOfqHktzChiGRrEdSbw9JRTcyXIASy5sV', '美女', 'jpg', '28382E,C7142A,89A1AB,FF529D,C9A827', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '220x165_0_2013091105023733144');
+INSERT INTO `images` VALUES (1, '1515813379133-11515813413mcdoe1fjrp.jpg', '1515813379133-11515813413fyysaasppw.jpg', '1515813379133', '', 13, 1, '2018-01-13 11:16:56', 'active', 'D8trlJmBk3Mo6ZvSBDnP8ANS001KDHilceFrEX4o6GOcSrf95b0Eea3c9FwLmNfz8Yp9PRBkFbEh46CTh3DaaOQbLAP1v7Na4oLBLAj2frdjO3BpE5ibDBzr1apJWxbYlKHDZSPOSxW0cA5TSQXdFv3Cp9Ek7IgKv1FCLcUPhM6Jv9EXL1jOR72PIWjSf4cMHzj3jphg', '77', 'jpg', '7275EA,CBB1FB,EA8A71,573C5B,8C6A69', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '1515813379133', 0);
+INSERT INTO `images` VALUES (2, '-115158135380eb2dw90my.jpg', '-11515813538uczijpxr2z.jpg', '上海哦哦哦', '', 13, 1, '2018-01-13 11:19:01', 'active', 'ajclC9XmVjVuJTEyBGE7HXfHtS5GEGrX0dgvA7hLn8L0wdAlmZQwOGuGiDpMmIxZq2zs4tA4LNbBCL34JZR28xk6HHr7zJbkKzNRpDnRO8V91CE4vNQvXLZrEvXF6GbYfBoQcRjn6WtcOcyRZFtwNUGQOVxDTFHEvChOem2C3rSXiKuvV9rWhZrPW6wZrbJ7sGLCsI9A', '7788', 'jpg', '0A2037,022A9B,984FC5,F786EE,E86D0F', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '上海哦哦哦', 0);
+INSERT INTO `images` VALUES (3, '-11515815836y8xz84r2qe.jpg', '-11515815836ikxjihwgk2.jpg', '北极的冰天雪地', '', 13, 1, '2018-01-13 11:57:18', 'active', 'nsofbUHeq1cfTV7BzRXbkid4V5KI1sNZIlfmTSkZc6pAnBub9BWgin6bxjZGLxAoi3GP6u6A5GFlWFrVyD8Ce6cDxOovCLIg8X0H7TcN5PPBYmNtq8E1eXMLplmDNIkuMSSr9KRnjQk0MFkeRQcqw2CnodPdpkLp5mUogWjkppJQYKH8y9F5tJPUynCmpgujS7WOMoHM', '冰天雪地', 'jpg', '689ABD,004DB9,CAE6EA,00045F,DA0404', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '北极的冰天雪地', 0);
+INSERT INTO `images` VALUES (4, '-11515822626hxpply1ixf.jpg', '-115158226264fddpvmvnr.jpg', '北极风光图片', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:50:29', 'active', 'zh0MSm4jic3PLG9ycgBN7af70FO0T3LI1BhxbXOWQ7TRFgFIlO0iXUxiW7CeAIRNFcPlF6uvNLGpNjUHb7SDCQEUSnSjBgkgNmr3naGFKmEPUDggsE9mhHWpk1BJXxqFY6ysgZ9SJeoN8pcXgTtfK0bXQqKB1Fhw7MCfZqaHfPyRrQSSeimQ2MonUdjoxVkeLTVGax3u', '北极', 'jpg', '44558B,0B0D19,36656F,8C6441,C0B77E', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '北极风光图片', 0);
+INSERT INTO `images` VALUES (5, '-11515822693nekqp7tfx1.jpg', '-11515822693dtazp6nsw4.jpg', '草丛里的蘑菇', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:51:37', 'active', 'M4OxbMgCIqpo3AE7VvS40Y8V1GeYJefElF9Fn2AE4um4oDzN6A8COMTK5anwMDdl4QKIdwpS73jEJsYDnUJc2UXQCwPhZAPEFDeqWmRoN2LrKXmEShszk20e63SnIreBdVcyPpG0Z97tqIuga0GO32fFtq3OM0nTG8APmsaehHdRdn93hFLHTE9PFP9v1HtNTgw2RMsX', '蘑菇', 'jpg', '447B03,DAC900,1E3D02,593712,70BA4B', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '草丛里的蘑菇', 0);
+INSERT INTO `images` VALUES (6, '-11515822733gqctyfzilx.jpg', '-11515822733m9h83udzqb.jpg', '大自然风景', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:52:16', 'active', 'ufQN5AmRvOxZI2KcRBLHoHFyaVoej9kPimoNDGnYMr8CS94YH7iR1xN10TVgS4XGlTQVwlyCOwqxd30D3zkEHZcIlqhi3dK2ZQR4DUioUYIQhFb4WKffDwQwJmoGLccnaGWF0a5CdC08YZeEwgPjtMdR51dsxXJ0qPmfKiDkO9eADtJMou7YQOCGAehIFiLjfe80XQCA', '大自然', 'jpg', '8AA9D7,344767,D03612,650F0E,6A4A19', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '大自然风景', 0);
+INSERT INTO `images` VALUES (7, '-11515822780bq7o4ukxhn.jpg', '-11515822780yxef4m5no1.jpg', '非常漂亮的大峡谷', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:53:03', 'active', 'zaMj2liBZExNZGfHuQtLmUbdyEWJHKQJHBbtWLLd90ij59UJ2xO2VOAKaevTXRFNtL8I7XpCwQB8SbLYBxplBlrv2xBuXtPMHyB3WrpYTBjxgTlRNN4mhs37XFZHcXuQDa9JVozRULD2hRviGsEXbUM04UbE6830cKVwA1mI0ORz1aKDVxN2NvKeud8AAAp171Gjhhiy', '大峡谷', 'jpg', '4591EF,053566,324B2E,7B893E,AFC7ED', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '非常漂亮的大峡谷', 0);
+INSERT INTO `images` VALUES (8, '-115158228792it5y7fcp1.jpg', '-11515822879dnkjdwjctx.jpg', '好看大海沙滩', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:54:43', 'active', 'xes6VwYkor4ZlTvfjzMMJtgI0PRgeGkehuHumekYTsud3miHHVtR1xSOHo4nM1HS32xUsnbxCVlDoxCY2pzr121tRHzNTNDHXKP4xqPSJYWMg9nVwIHHyxysDVUL7WwILTdO6FKjJsyWslkz0NJb95SyMcMhyz1c5n8A86c7schiE56gMMiJz6AKbyHCKzvHDRAN3Zts', '沙滩', 'jpg', '138AA8,1E5F95,424C2A,C1BBA1,2A303C', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '好看大海沙滩', 0);
+INSERT INTO `images` VALUES (9, '-11515822953rcuqvxlolt.jpg', '-11515822953i8ekcwf84o.jpg', '好看的松鼠风景图片', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:55:55', 'active', 'sqMeQAcqApfCGOPC0NqPPyB3oWbxtRAYSsp5cih8RfiDI9NcZDfsImXzmXGE7YUAAty9wj0qVtTlSzA18VEfGKz2o2p6mrxMsKIlRuQmPBciVqBZRSu6nBE8EgBc1zqZUjXZDlb6qOSkC5UCmRaMMCSkXcfjo8SuI8IxlHu3ifJ5IXyrfJKUeHLlReWuxI4nDefY230c', '松鼠', 'jpg', '888343,AF9B94,875524,391600,FAD5A8', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '好看的风景图片', 0);
+INSERT INTO `images` VALUES (10, '-11515822998lqta4sa6kg.jpg', '-11515822998t3curomwhu.jpg', '蓝天白云下的植物', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:56:41', 'active', 'JY9rk12lBCYZseHDb3tHd9X5bQUHD7G7kyvtLL2pkk2Baf6n9ASEFKyQoWJlUEFQxUOCib63kPxqDD01GBi3FeNBUafkPkAXYENaeEVBsWahRd69aIeBMlwHHDqZmXhq0c6XlzkcNW1QbPBtCmk8LCkyGrN3oJ5Ed1yeBDKSj2f4NsHEdru7gwersUJGMwuWGcJcQFuv', '植物', 'jpg', '66A8F4,3870CF,436D21,BEC517,F8F2DC', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '蓝天白云下的植物', 0);
+INSERT INTO `images` VALUES (11, '-11515823043cqvojypkat.jpg', '-115158230431srrklyqkv.jpg', '蓝天白云与大海', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:57:31', 'active', 'vPbBX8z0Ssawug6xpUgbNXUldiy5CI7pylXF4MGICbQkisQz59zlTdLFFBSBbwINnsp75JC6t3v1OcvH45byWBdHn0NvhbhkO8F0iDXVLxieF6vSdtfgmrEzxGfAq2eyBs3vhSrgGMnTEYHOCDZwFH4ZledgXGNNPPFg1O5TV3xLaFUGecnW4wSvxLCZPjYgpd6Kos3j', '大海', 'jpg', '7394DB,2B5C85,081639,C7A7BF,866F5F', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '蓝天白云与大海', 0);
+INSERT INTO `images` VALUES (12, '-11515823091jars4fn0dk.jpg', '-11515823091ezmqq03hkm.jpg', '美丽的大峡谷', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:58:15', 'active', 'PteBCYFTlQzerdXR2vYPe91sGWbwcQzaOOqcipCoUbXYS5xLkZ04mNFZV6N8fOCbtBcrgfldwQTZtNq982ptCgVVpHZusv4VG1gPoRFLgu0ybs2gBV16uFh3rCBncpBV9GP8Cq0d17D2brXz8ARI6BBC8RelhcaJ0Zx3AwNcX2UYOVnKeC5ko1uUEDK09KQ34k34BEc3', '大峡谷', 'jpg', 'C2CBDA,949025,473100,000417,34416B', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '美丽的大峡谷', 0);
+INSERT INTO `images` VALUES (13, '-11515823149sagpb0qfrw.jpg', '-11515823149ximkeg1pbe.jpg', '美丽的大自然风光', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 13:59:18', 'active', '49Ft4jdxQklX2XI6PHQezDHvzSdYMc8UDF94h04R641JFAzN3IexgmjK5ndJjiJjnRb79nKY0B1gnTv4kK5wQtS8XDSdVC6ycolAMvYFCrlTT2TQ8GuV8QsxN2W4UsPNVPKs7U6xprOYKbEGOvcNhM3sVLxTnhLXO4KpCrvoZBoGIuTSCCaokaNPO0BRCYrbJ1pIHkKm', '大自然', 'jpg', '7E7BAA,CACDF0,0E0B28,D68872,955049', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '美丽的大自然风光', 0);
+INSERT INTO `images` VALUES (14, '-11515823198iockxbkqaz.jpg', '-11515823198oxyf6aadnt.jpg', '美丽的星空', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 11, 1, '2018-01-13 14:00:00', 'active', 'FhYF4T9NZwcNszIaYh4FJRMkhyUYuJfl3hSuWwHc2qFVquKvS52cbGUxwDAOd8YEGgrziqPcXoTLyxYwpjXExz3oqxcgmtsXdD8hxsFw7ZPhdzhGbOTwbv7nFVvKjwosffKiDTAb3vZ5WKdcCENe8sgAx3i76kB4jINZRwJUAlNyZF4XEJBxl7oAJNgNQAPsU2SiKvbg', '星空', 'jpg', '473370,8E6D9A,C06C3D,7F3E2C,31051E', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '美丽的星空', 0);
+INSERT INTO `images` VALUES (15, '-11515823238xxooj2iq5o.jpg', '-11515823238wudfvj6lmj.jpg', '树丛里面的蘑菇', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 14:00:42', 'active', '8SXDvbhnuDet9CvLFzmVaY3VTS9GuYpPIw3nT85nwpuallCw9cNaK5pUrTEfrhoMuekYhHT6gH4joZqi7jnHiOqqp5bYmRNCgQbfxtdZT8XGdfkMp0IZSGACanHByzbjqmTufWx5Yfaa90XsAnkBqQXX8g5fEiZrFc3hdswKbU9hXJdYAxE5FiNQiVNojbSkhkzJsazb', '蘑菇', 'jpg', '7FAE7A,4E7340,D87404,A93C13,2A3827', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '树丛里面的蘑菇', 0);
+INSERT INTO `images` VALUES (16, '-11515823277atfsw28j6a.jpg', '-11515823277yn8qjyhkpp.jpg', '夕阳西下的草地', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 14:01:21', 'active', 'aJcUFf5FLPOKawoGAFSjYY40E6juDXAFuIjYXoDFIVRnXFqT4hBtAVCPBV4TK23wdBQB2mGzfl7RdHXsnXMJ3V1SBv6XvGYiZn0AQRd3nIFkdRHsRGG8jC5KnT88pXQBu1ntvezy49NcyPzjz4RHpMiZBEBgZJOnoYRQZ8BH7ym9TJ6281SLfwUELl9jmSEOUqcg7EcQ', '草地', 'jpg', '2780D0,FEC425,505F02,F29A68,632300', '', '', 'yes', '2018-01-13 06:47:10', 'free', 'no', '夕阳西下的草地', 0);
+INSERT INTO `images` VALUES (17, '-11515823318sezzuaty6a.jpg', '-11515823318qsumy71qah.jpg', '一望无际的大草原', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 14:02:01', 'active', 'DoUQtMQ7CVnEd1R3CIM26LJ7J182tbUio8QrXCS2zPiJY7Ay3is6BaCztVuaqsksWaEcAS5ZQwGZgjxFTLabVPA3RiV3Ql0JQRQ2sVd8C4hKS3vTAZsRwA32E3fSNVGzRWBDOHPDMH2y7CIhx0UaWUxUtVuAYMN1q6MaEY91IuvQjAPmN6BvXXgHiVeQutgXNDfwpOpH', '草原', 'jpg', 'BDC615,2B4504,3384D5,6D7F11,012B41', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '一望无际的大草原', 0);
+INSERT INTO `images` VALUES (18, '-115158233500ze2xx7yrf.jpg', '-11515823350ohl08euevc.jpg', '中国南沙群岛', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 14:02:32', 'active', 'tZK2ktJcAQXTYhD2f6ldC6S3JNOY8scR7KtoulGp1BzXpd9X5awv7iAErXs0sDpIKWkF1gH4exBqVj8CQIuXwggfAathtYIRetDD6YWqiiAvlyWkX4Yma5Or8qsDMvkkKmbO8ofbVx25vClpjN3smeCrMqxeuLwQLvrCdUWvBPQwS2gS4jjAQNUzzKETSmIsexkMOMf3', '南沙群岛', 'jpg', '1B52AD,091A48,5488D1,1C526C,509167', '', '', 'yes', '2018-01-13 06:46:55', 'free', 'no', '中国南沙群岛', 0);
+INSERT INTO `images` VALUES (21, '-11515831707kmxsvvn77n.jpg', '-11515831707b0sm54uloa.jpg', '美丽的乡间小路', '这里是图片描述，在上传时候可以进行填写，佳音图片使用世界前沿的人工智能技术,为用户甄选海量的高清美图,用更流畅、更快捷、更精准的搜索体验,带你去发现多彩的世界。', 12, 1, '2018-01-13 16:21:51', 'active', 't2yrsRF1quTH8BmHeVx6sOhpG0wNZDA9O68K10KsbuT8EUZLUQ6K3o9YEc1Wx1YbWhoJNiOvALjllMays8q9a6Nd9aKwjJWlUd6oRYDqKM1F0j0PcbhnsvOvkmwOwmIrv9Eg1Ktuo2YmQIEW1zIhRaOoqxpVaYG11W6XrJ7bbg2Z63ZPfViAWeyDCo1eheC9UNyjOZ5R', '乡间小路', 'jpg', '5C96A2,545C11,F0E5C9,81A817,E1B72F', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '1515815321909', 0);
+INSERT INTO `images` VALUES (22, '220x165-0-2013082608552885566-51599197575jyxu2llfv2.jpg', '220x165-0-2013082608552885566-51599197575eql6l3akno.jpg', '220x165_0_2013082608552885566', '', 11, 5, '2020-09-04 13:32:57', 'active', 'yqoWiKjBYMaeoPpFjbs440rhnhuCyXrdt09CudBaZlm3Zgttg5NMxXg1gdZf7sK22yfY2rXUsy7mktML3VogbdHGdnd5Ycm2Fpp33EdsfKzMaRFqsoHgYRiRkem3kigspM0HwXHaywxOveqCF6ELJ57a6mkzkgtGkDl0COZnDlzIAXt97M7s5CFgkwk3Gmgruqw69nRE', 'first', 'jpg', '0A0019,A23A21,E76C4A,4F2026,60A9D2', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '220x165_0_2013082608552885566', 0);
+INSERT INTO `images` VALUES (23, '220x165-0-2013091105023733144-51599199777tvrdpwd5iy.jpg', '220x165-0-2013091105023733144-51599199777hnd9b0hsb7.jpg', '220x165_0_2013091105023733144', '', 11, 5, '2020-09-04 14:09:38', 'active', '98oayBSIfsZpIKVg1hTBCF3IK8BgaOmhX9A5656VHWq9A47SISiCOoaNuptLUmMnL2B1DLsUVUIcSxE9ewN5k99nEDyXEbN81xIvswqWnkpyIKNwD2AcnqlC2NIAHQd5jVGiQT2ECx33el6TBvjUe9HoDA1aAQj3YMKicdlsOfqHktzChiGRrEdSbw9JRTcyXIASy5sV', '美女', 'jpg', '28382E,C7142A,89A1AB,FF529D,C9A827', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '220x165_0_2013091105023733144', 0);
+INSERT INTO `images` VALUES (24, '1-51599452604gqcovfucm5.jpg', '1-51599452604ducz6uaw8a.jpg', '1', '', 11, 5, '2020-09-07 12:23:26', 'active', 'aqdUfTDf95wbB5ut1MpUlL0B3FPSXkFyrsjK5yD6ehpTOxKqgORJ4wgXuIZNgPdIXNcRVp9MZ9VistIqLSftAMHShS9HWWD1YhNeXOlB3vNExbGpm1DiQ8qrevsGkHY465n9HbRAkiiS4oNvMFFJEoSlhTHSXsHWlvCHRHUmmneunkeeemAHrZIHlBwVdLkviQJizWFp', '美女', 'jpg', '021849,2C5BA9,809BC6,B3A193,3F2D29', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '1', 0);
+INSERT INTO `images` VALUES (25, '5-51601357644d8zipbo9lx.jpg', '5-51601357644lc6lm1qqpn.jpg', '5', '', 11, 5, '2020-09-29 13:34:06', 'active', '07payJhiqmlZ7enMulb3kVwJ2GYfPPq1HxGYYdLPtncdbR0tz1FZg8NQtxCtP3ZHJeRnHt32h1Ywv9Ql8Cudfsb7tuROEjIStUrSg9405T4ZLsAEGwR6vUIZdSuE5Klm7bvpogAyBzUeyunFyV8lefOomnomkkxAdAvLjzHbxaIogfgaNRg0sSziFdt10FZXxDSVJwRz', '美女', 'jpg', '30499B,4F7DBB,AFC3E4,000F30,154E6B', '', '', 'no', '0000-00-00 00:00:00', 'free', 'no', '5', 0);
 
 -- ----------------------------
 -- Table structure for images_reporteds
 -- ----------------------------
 DROP TABLE IF EXISTS `images_reporteds`;
 CREATE TABLE `images_reporteds`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `user_id` int(0) UNSIGNED NOT NULL,
-  `image_id` int(0) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `image_id` int(10) UNSIGNED NOT NULL,
   `reason` enum('copyright','privacy_issue','violent_sexual_content') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `created_at` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `user`(`user_id`, `image_id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for likes
 -- ----------------------------
 DROP TABLE IF EXISTS `likes`;
 CREATE TABLE `likes`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `user_id` int(0) UNSIGNED NOT NULL,
-  `images_id` int(0) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `images_id` int(10) UNSIGNED NOT NULL,
   `status` enum('0','1') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '1' COMMENT '0 trash, 1 active',
   `date` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_usr`(`user_id`, `images_id`, `status`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of likes
@@ -560,18 +563,18 @@ INSERT INTO `likes` VALUES (2, 4, 18, '1', '2018-01-13 14:25:03');
 DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE `migrations`  (
   `migration` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
-  `batch` int(0) NOT NULL
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Dynamic;
+  `batch` int(11) NOT NULL
+) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_unicode_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for notifications
 -- ----------------------------
 DROP TABLE IF EXISTS `notifications`;
 CREATE TABLE `notifications`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `destination` int(0) UNSIGNED NOT NULL,
-  `author` int(0) UNSIGNED NOT NULL,
-  `target` int(0) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `destination` int(10) UNSIGNED NOT NULL,
+  `author` int(10) UNSIGNED NOT NULL,
+  `target` int(10) UNSIGNED NOT NULL,
   `type` enum('1','2','3','4','5','6','7') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL COMMENT '1 Follow, 2  Like, 3 reply, 4 Like Comment',
   `status` enum('0','1') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '0' COMMENT '0 unseen, 1 seen',
   `created_at` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
@@ -579,7 +582,7 @@ CREATE TABLE `notifications`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `destination`(`destination`, `author`, `target`, `status`) USING BTREE,
   INDEX `trash`(`trash`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of notifications
@@ -592,12 +595,12 @@ INSERT INTO `notifications` VALUES (2, 1, 4, 4, '1', '1', '2018-01-13 14:25:11',
 -- ----------------------------
 DROP TABLE IF EXISTS `pages`;
 CREATE TABLE `pages`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `title` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `content` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `slug` varchar(100) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 8 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of pages
@@ -614,14 +617,14 @@ INSERT INTO `pages` VALUES (7, '支持', '<p>北京全景视觉网络科技股�
 -- ----------------------------
 DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE `password_resets`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `token` varchar(150) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `created_at` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_hash`(`token`) USING BTREE,
   INDEX `email`(`email`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 11 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of password_resets
@@ -633,26 +636,26 @@ INSERT INTO `password_resets` VALUES (10, '453ebd9fe88e4611f3645cf18b84a8993e00c
 -- ----------------------------
 DROP TABLE IF EXISTS `replies`;
 CREATE TABLE `replies`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `comment_id` int(0) UNSIGNED NOT NULL,
-  `user_id` int(0) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `comment_id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
   `reply` text CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `date` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
   `status` enum('0','1') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '1' COMMENT '0 Trash, 1 Active',
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `post`(`comment_id`, `user_id`, `status`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for reserved
 -- ----------------------------
 DROP TABLE IF EXISTS `reserved`;
 CREATE TABLE `reserved`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   PRIMARY KEY (`id`) USING BTREE,
   UNIQUE INDEX `name`(`name`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 39 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of reserved
@@ -698,8 +701,8 @@ INSERT INTO `reserved` VALUES (5, 'xxx');
 -- ----------------------------
 DROP TABLE IF EXISTS `stock`;
 CREATE TABLE `stock`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `images_id` int(0) UNSIGNED NOT NULL,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `images_id` int(10) UNSIGNED NOT NULL,
   `name` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `type` enum('small','medium','large') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `extension` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -709,7 +712,7 @@ CREATE TABLE `stock`  (
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `id_shot`(`images_id`, `type`) USING BTREE,
   INDEX `token`(`token`) USING BTREE
-) ENGINE = InnoDB CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 76 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of stock
@@ -777,13 +780,19 @@ INSERT INTO `stock` VALUES (66, 22, '51599197575z4lvg6patarodf0uvygybp8nt2cqnxqb
 INSERT INTO `stock` VALUES (67, 23, '51599199777kyz61ncijjvtpihpv2dvyx0dqrvjmrj3gbbzv4hjk865dtmadlqqqt4kh3hyueax0mvsafuttukkfkdmbovwju7jicuavzjprfx1.jpg', 'large', 'jpg', '220x165', '17.2kB', '98oayBSIfsZpIKVg1hTBCF3IK8BgaOmhX9A5656VHWq9A47SISiCOoaNuptLUmMnL2B1DLsUVUIcSxE9ewN5k99nEDyXEbN81xIvswqWnkpyIKNwD2AcnqlC2NIAHQd5jVGiQT2ECx33el6TBvjUe9HoDA1aAQj3YMKicdlsOfqHktzChiGRrEdSbw9JRTcyXIASy5sV');
 INSERT INTO `stock` VALUES (68, 23, '51599199777olpivoe50oecjno5aafssghusyhuqsbrx4xjkscbmw085cfvfluqurw2nasafvuwajjpocg3fsf4fk9t6jdp7b5stfjbs1k5tutw.jpg', 'medium', 'jpg', '900x675', '153kB', '98oayBSIfsZpIKVg1hTBCF3IK8BgaOmhX9A5656VHWq9A47SISiCOoaNuptLUmMnL2B1DLsUVUIcSxE9ewN5k99nEDyXEbN81xIvswqWnkpyIKNwD2AcnqlC2NIAHQd5jVGiQT2ECx33el6TBvjUe9HoDA1aAQj3YMKicdlsOfqHktzChiGRrEdSbw9JRTcyXIASy5sV');
 INSERT INTO `stock` VALUES (69, 23, '515991997778gwjvvgilpkfc8oavr0o36kibpmlheflrxa9tsifstpqsxqrz7tttou60ogiqaeayvndm94mwtodmgyiddwpfzjht7cejfdml3b6.jpg', 'small', 'jpg', '640x480', '87.6kB', '98oayBSIfsZpIKVg1hTBCF3IK8BgaOmhX9A5656VHWq9A47SISiCOoaNuptLUmMnL2B1DLsUVUIcSxE9ewN5k99nEDyXEbN81xIvswqWnkpyIKNwD2AcnqlC2NIAHQd5jVGiQT2ECx33el6TBvjUe9HoDA1aAQj3YMKicdlsOfqHktzChiGRrEdSbw9JRTcyXIASy5sV');
+INSERT INTO `stock` VALUES (70, 24, '51599452604izv56wh5dxa7tlle1m43xoo8lqqe8x1jukdhwlom315dyhbtzcv0z6iaoti5jhxo9ytcuevaq4b2ywd3fk1wlyzbl74eihe6txud.jpg', 'large', 'jpg', '500x375', '37.8kB', 'aqdUfTDf95wbB5ut1MpUlL0B3FPSXkFyrsjK5yD6ehpTOxKqgORJ4wgXuIZNgPdIXNcRVp9MZ9VistIqLSftAMHShS9HWWD1YhNeXOlB3vNExbGpm1DiQ8qrevsGkHY465n9HbRAkiiS4oNvMFFJEoSlhTHSXsHWlvCHRHUmmneunkeeemAHrZIHlBwVdLkviQJizWFp');
+INSERT INTO `stock` VALUES (71, 24, '51599452604kkojp4vyud4hejjg32vbojgsv40xxrcpgbgssd27sihgk2kdrfmqbe6h9ncdorekfawchutkr9ehecgqez7u18fez8vgxntr0jkm.jpg', 'medium', 'jpg', '900x675', '143.6kB', 'aqdUfTDf95wbB5ut1MpUlL0B3FPSXkFyrsjK5yD6ehpTOxKqgORJ4wgXuIZNgPdIXNcRVp9MZ9VistIqLSftAMHShS9HWWD1YhNeXOlB3vNExbGpm1DiQ8qrevsGkHY465n9HbRAkiiS4oNvMFFJEoSlhTHSXsHWlvCHRHUmmneunkeeemAHrZIHlBwVdLkviQJizWFp');
+INSERT INTO `stock` VALUES (72, 24, '51599452604ztus3pq7re2xxxwn5vue3eut3uniklp9cy9p6p0n3xv2czqvsw2lury5g7ugp0gvsogcxnzvmhaq1zknwbazphs1wtv32m0wtoc4.jpg', 'small', 'jpg', '640x480', '81.6kB', 'aqdUfTDf95wbB5ut1MpUlL0B3FPSXkFyrsjK5yD6ehpTOxKqgORJ4wgXuIZNgPdIXNcRVp9MZ9VistIqLSftAMHShS9HWWD1YhNeXOlB3vNExbGpm1DiQ8qrevsGkHY465n9HbRAkiiS4oNvMFFJEoSlhTHSXsHWlvCHRHUmmneunkeeemAHrZIHlBwVdLkviQJizWFp');
+INSERT INTO `stock` VALUES (73, 25, '51601357644qh4a78zasa6frvasqnj7ecqpqb5zcgcpgwlzy47ojbhaplmvw5t4fcevwgodnffuqdxeuas5bnl550lqvkmo80kwt0b11wgagnvm.jpg', 'large', 'jpg', '500x314', '34.7kB', '07payJhiqmlZ7enMulb3kVwJ2GYfPPq1HxGYYdLPtncdbR0tz1FZg8NQtxCtP3ZHJeRnHt32h1Ywv9Ql8Cudfsb7tuROEjIStUrSg9405T4ZLsAEGwR6vUIZdSuE5Klm7bvpogAyBzUeyunFyV8lefOomnomkkxAdAvLjzHbxaIogfgaNRg0sSziFdt10FZXxDSVJwRz');
+INSERT INTO `stock` VALUES (74, 25, '516013576443ej52cknxuepdsdhd3dt0ruorrwk3ctnota2t57tacjpwwvszampdzczzyqmzogzigqitwpztu2eeflhs2u4idd90jpuvjtzwbfx.jpg', 'medium', 'jpg', '900x566', '127.3kB', '07payJhiqmlZ7enMulb3kVwJ2GYfPPq1HxGYYdLPtncdbR0tz1FZg8NQtxCtP3ZHJeRnHt32h1Ywv9Ql8Cudfsb7tuROEjIStUrSg9405T4ZLsAEGwR6vUIZdSuE5Klm7bvpogAyBzUeyunFyV8lefOomnomkkxAdAvLjzHbxaIogfgaNRg0sSziFdt10FZXxDSVJwRz');
+INSERT INTO `stock` VALUES (75, 25, '51601357644zoxrawlz8ycksvixuzdo39rkedygxsnyiqqkuuygatsoq1igu2uubsrbvyed8a7x0mqdfigutdpb0vt7ndbjkneshabt54anizjn.jpg', 'small', 'jpg', '640x402', '73.4kB', '07payJhiqmlZ7enMulb3kVwJ2GYfPPq1HxGYYdLPtncdbR0tz1FZg8NQtxCtP3ZHJeRnHt32h1Ywv9Ql8Cudfsb7tuROEjIStUrSg9405T4ZLsAEGwR6vUIZdSuE5Klm7bvpogAyBzUeyunFyV8lefOomnomkkxAdAvLjzHbxaIogfgaNRg0sSziFdt10FZXxDSVJwRz');
 
 -- ----------------------------
 -- Table structure for users
 -- ----------------------------
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `username` varchar(30) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `name` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `bio` varchar(200) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
@@ -812,44 +821,44 @@ CREATE TABLE `users`  (
   INDEX `username`(`username`, `status`) USING BTREE,
   INDEX `activation_code`(`activation_code`) USING BTREE,
   INDEX `role`(`role`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 6 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of users
 -- ----------------------------
-INSERT INTO `users` VALUES (1, 'Admin', '佳音布吉', '我们不应该不惜任何代价地去保持友谊，从而使它受到玷污。如果为了那更伟大的爱，必须牺牲友谊，那也是没有办法的事；不过如果能够保持下去，那么，它就能真的达到完美的境界了。 —— 泰戈尔\r\n', '45', '$2y$10$wjbCfnJZ07JcBEb4aGD58.Urd0yAFfHsAyofPE3w9W61y05MgZBJa', 'admin@example.com', '2016-12-16 07:16:43', 'admin-11515824136rlrmhnhnkj.jpg', 'cover.jpg', 'active', '1', 'admin', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vb5z&id=564099222906', 'ilFHKXsxqH4L9GgMLFq4HSXfPB2BMU7EJjlfn7gWBh81ldEa1uLB7agiHcNj', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vb5z&id=564099222906', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vb5z&id=564099222906', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vb5z&id=564099222906', 'miguelvasquezweb@gmail.com', '', NULL, NULL, '', 'yes');
+INSERT INTO `users` VALUES (1, 'Admin', '佳音布吉', '我们不应该不惜任何代价地去保持友谊，从而使它受到玷污。如果为了那更伟大的爱，必须牺牲友谊，那也是没有办法的事；不过如果能够保持下去，那么，它就能真的达到完美的境界了。 —— 泰戈尔\r\n', '45', '$2y$10$5PLNcGK.mmpbDSbI2fmr4er.esT.T3YqLGxcWjhCNdCUX0oLnrzI6', 'admin@example.com', '2016-12-16 07:16:43', 'admin-11515824136rlrmhnhnkj.jpg', 'cover.jpg', 'active', '1', 'admin', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vb5z&id=564099222906', 'NDbhVNwgwz5Vv1fZHpF8P8fnzyxN8CsKsu6Xq8TMMqomjQCMSoFvEsZFVUbF', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vb5z&id=564099222906', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vb5z&id=564099222906', 'https://item.taobao.com/item.htm?spm=0.7095261.0.0.1bfde3c5n8vb5z&id=564099222906', 'miguelvasquezweb@gmail.com', '', NULL, NULL, '', 'yes');
 INSERT INTO `users` VALUES (4, 'test520', '', '', '', '$2y$10$176Qt..6ZqHsi7j1K.uKHOS40wyjsmDZniJ5V7zKfv3OLbjfnycqS', '1990672233@qq.com', '2018-01-13 14:21:17', 'default.jpg', 'cover.jpg', 'active', '1', 'normal', '', 'oFsOSlzFj2PHimPyioGKbIQJczJcVQrKZ7pDYvvjk2TtmPkqKhE7wJg87WMP', '', '', '', '', '', NULL, NULL, 'XxnsfxiVXfFzNPtVR7OQNjiPRSPOburp6vtCbHTLY7EZps8M3jcTe0qcXR89vpHp48upC8WNTFW', 'yes');
-INSERT INTO `users` VALUES (5, 'xpx888', '', '', '', '$2y$10$1kS6UwfduNGSC8KFBpjytOuy1XoPPoxlLkO54Mp.pxjznY/KcKdua', '30854665@qq.com', '2020-09-04 10:37:54', 'default.jpg', 'cover.jpg', 'active', '1', 'normal', '', 'DbL4pPlkTYL4wn9Smfxmg8TkaO5QQqmP8803H5c0bF0nYLeHtZaRtREQW76Y', '', '', '', '', '', NULL, NULL, 'Pf9FIQ7OCt15Jt5UreUY8nvUnjGFYVYzZVpJYCEOY0ISn7qH2kFpJeZLEp9JDJhGVWAtd2zgrw2', 'yes');
+INSERT INTO `users` VALUES (5, 'xpx888', '', '', '', '$2y$10$1kS6UwfduNGSC8KFBpjytOuy1XoPPoxlLkO54Mp.pxjznY/KcKdua', '30854665@qq.com', '2020-09-04 10:37:54', 'default.jpg', 'cover.jpg', 'active', '1', 'normal', '', 'SOkb60Nz1DJKndOEnEXERDnJKTfwVNBmhj7lPMVlkCs3nPUMrfAZh8O6noqx', '', '', '', '', '', NULL, NULL, 'Pf9FIQ7OCt15Jt5UreUY8nvUnjGFYVYzZVpJYCEOY0ISn7qH2kFpJeZLEp9JDJhGVWAtd2zgrw2', 'yes');
 
 -- ----------------------------
 -- Table structure for users_reporteds
 -- ----------------------------
 DROP TABLE IF EXISTS `users_reporteds`;
 CREATE TABLE `users_reporteds`  (
-  `id` int(0) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT,
   `reason` enum('copyright','privacy_issue','violent_sexual_content','spoofing') CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `user_id` int(0) UNSIGNED NOT NULL,
-  `id_reported` int(0) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
+  `id_reported` int(10) UNSIGNED NOT NULL,
   `created_at` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `user`(`user_id`, `id_reported`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 1 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Table structure for visits
 -- ----------------------------
 DROP TABLE IF EXISTS `visits`;
 CREATE TABLE `visits`  (
-  `id` bigint(0) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `images_id` int(0) UNSIGNED NOT NULL,
-  `user_id` int(0) UNSIGNED NOT NULL,
+  `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `images_id` int(10) UNSIGNED NOT NULL,
+  `user_id` int(10) UNSIGNED NOT NULL,
   `ip` varchar(25) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `date` timestamp(0) NOT NULL DEFAULT CURRENT_TIMESTAMP(0),
   PRIMARY KEY (`id`) USING BTREE,
   INDEX `publicacion_id`(`images_id`) USING BTREE,
   INDEX `usr_id`(`user_id`) USING BTREE,
   INDEX `ip`(`ip`) USING BTREE
-) ENGINE = InnoDB AUTO_INCREMENT = 19 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Dynamic;
+) ENGINE = InnoDB AUTO_INCREMENT = 20 CHARACTER SET = utf8 COLLATE = utf8_general_ci ROW_FORMAT = Compact;
 
 -- ----------------------------
 -- Records of visits
