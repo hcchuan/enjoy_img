@@ -73,6 +73,15 @@ Route::get('categories', function(){
 
 //<---- Categories List
 Route::get('category/{slug}','HomeController@category');
+
+//排行榜（总榜）
+Route::get('rank','RankController@rank');
+
+//排行榜（总榜）
+Route::get('rank/{slug}','RankController@rank');
+
+//排行榜（月榜、年榜等）
+Route::get('rank/{slug}/{time_type}','RankController@rank');
   
 // Tags
  Route::get('tags', function(){

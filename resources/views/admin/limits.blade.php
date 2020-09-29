@@ -175,6 +175,8 @@
                       <label class="col-sm-2 control-label">{{ trans('admin.file_size_allowed') }}</label>
                       <div class="col-sm-10">
                       	<select name="file_size_allowed" class="form-control">
+                            <!--图片最大大小-->
+                            <option @if( $settings->file_size_allowed == 200 ) selected="selected" @endif value="200">200K</option>
                             <option @if( $settings->file_size_allowed == 1024 ) selected="selected" @endif value="1024">1 MB</option>
 						  	<option @if( $settings->file_size_allowed == 2048 ) selected="selected" @endif value="2048">2 MB</option>
 						  	<option @if( $settings->file_size_allowed == 3072 ) selected="selected" @endif value="3072">3 MB</option>

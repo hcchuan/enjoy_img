@@ -78,13 +78,13 @@
                  <!-- Start Form Group -->
                     <div class="form-group">
                       <label>{{ trans('admin.title') }}</label>
-                        <input type="text" value="{{ old('title') }}" name="title" id="title" class="form-control" placeholder="{{ trans('admin.title') }}">
+                        <input type="text" value="{{ old('title') }}美女图片" name="title" id="title" class="form-control" placeholder="{{ trans('admin.title') }}">
                     </div><!-- /.form-group-->
 
                    <!-- Start Form Group -->
                     <div class="form-group">
                       <label>{{ trans('misc.tags') }}</label>
-                        <input type="text" value0="{{ old('tags') }}" value="美女" id="tagInput"  name="tags" class="form-control" placeholder="{{ trans('misc.tags') }}">
+                        <input type="text" value="{{ old('tags') }}美女" id="tagInput"  name="tags" class="form-control" placeholder="{{ trans('misc.tags') }}">
                       	<p class="help-block">* {{ trans('misc.add_tags_guide') }} ({{trans('misc.maximum_tags', ['limit' => $settings->tags_limit ]) }})</p>
                   </div><!-- /.form-group-->
 

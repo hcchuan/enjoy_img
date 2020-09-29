@@ -54,7 +54,7 @@ return array(
 	'avatar'                    =>      '头像',
 	'cover'                     =>      '封面图',
 	'delete'                    =>      '删除',
-	'max_size'                  =>      '图片必须大于或等于',
+	'max_size'                  =>      '图片必须小于或等于',
 	'formats_available'         =>      '无效的图片格式，支持 JPG, GIF 或 PNG格式.',
 	'please_select_image'       =>      '请选择一张图片',
 	'width_height_min'          =>      '图片必须大于或等于 400 x 200px',
@@ -222,5 +222,6 @@ return array(
 	'm'                =>      'M', // MEDIUM
 	'l'                =>      'L', // LARGE
 	
-	
+	'rank' => '排行榜',
+	'rank_total' => '总榜',
 );

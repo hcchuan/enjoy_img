@@ -46,6 +46,12 @@ if( Auth::check() ) {
         		</li>
         		@endif
 
+					<li>
+						<a href="{{url('rank')}}" class="font-default text-uppercase">
+							{{trans('misc.rank')}}
+						</a>
+					</li>
+
         		<li class="dropdown">
         			<a href="javascript:void(0);" class="font-default text-uppercase"  data-toggle="dropdown">{{trans('misc.explore')}}
         				<i class="ion-chevron-down margin-lft5"></i>
@@ -101,6 +107,8 @@ if( Auth::check() ) {
         					<span class="title-dropdown">{{ trans('users.notifications') }}</span>
         					</a>
         			</li><!-- NOTY -->
+
+
 
         			<li class="dropdown">
 			          <a href="javascript:void(0);" data-toggle="dropdown" class="userAvatar myprofile dropdown-toggle font-default text-uppercase">
@@ -178,6 +186,7 @@ if( Auth::check() ) {
         					{{ trans('auth.login') }}
         					</a>
         			</li>
+
         	  @endif
           </ul>
 

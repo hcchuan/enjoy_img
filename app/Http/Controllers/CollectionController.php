@@ -19,7 +19,7 @@ class CollectionController extends Controller {
 				
 
 			return Validator::make($data, [
-	        	'title' =>  'required|max:25|min:2',
+	        	'title' =>  'required|max:25|min:1',
 	        ]);
 		
     }

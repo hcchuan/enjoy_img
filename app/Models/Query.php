@@ -166,18 +166,39 @@ class Query extends Model {
 
 	}//<---- End Method
 
-	public static function categoryImages($slug) {
+    /**按类别和时间范围查询图片
+     * @param  slug类别代号
+     * @param  time_type时间类型：0全部、1今日、2本周、3本月、4本年、5近一周、6近一月、7近一年、8自定义时间段、9本季度、10本半年，不传默认为0
+    */
+	public static function categoryImages($slug,$time_type=0) {
 
 		$settings = AdminSettings::first();
 
 		 $category = Categories::where('slug','=',$slug)->first();
-	  	 $images   = Images::where('status', 'active')->where('categories_id',$category->id)->orderBy('id','DESC')->paginate($settings->result_request);
+		 $query=Images::where('status', 'active')->where('categories_id',$category->id)->orderBy('id','DESC');
+         if(in_array($time_type,[1,2,3,9,10,4]))
+         {
+            $date_range=get_date_range($time_type,'','',true);
+            $query->whereBetween('date',$date_range);
+         }
+	  	 $images   = $query->paginate($settings->result_request);
 
-		return ['images' => $images, 'category' => $category];
+		 return ['images' => $images, 'category' => $category];
 
 	}//<---- End Method
 
-	public static function tagsImages($tags) {
+    public static function getImageRank($slug) {
+
+        $settings = AdminSettings::first();
+
+        $category = Categories::where('slug','=',$slug)->first();
+        $images   = Images::where('status', 'active')->where('categories_id',$category->id)->orderBy('link_num','DESC')->paginate($settings->result_request);
+
+        return ['images' => $images, 'category' => $category];
+
+    }//<---- End Method
+
+    public static function tagsImages($tags) {
 
 		$settings = AdminSettings::first();
 

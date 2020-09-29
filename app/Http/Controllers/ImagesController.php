@@ -41,12 +41,12 @@ class ImagesController extends Controller {
 		'photo.required' => trans('misc.please_select_image'),
         "photo.max"   => trans('misc.max_size').' '.Helper::formatBytes( $sizeAllowed, 1 ),
 	);
-
+        $title_validator='required|min:1|max:30';
 		// Create Rules
 		if( $id == null ) {
 			return Validator::make($data, [
 			 'photo'       => 'required|mimes:jpg,gif,png,jpe,jpeg|image_size:>='.$dimensions[0].',>='.$dimensions[1].'|max:'.$this->settings->file_size_allowed.'',
-        	'title'       => 'required|min:3|max:30',
+        	'title'       =>$title_validator,
             'description' => 'min:2|max:'.$this->settings->description_length.'',
 	        'tags'        => 'required',
         ], $messages);
@@ -54,7 +54,7 @@ class ImagesController extends Controller {
 		// Update Rules
 		} else {
 			return Validator::make($data, [
-	        	'title'       => 'required|min:3|max:30',
+	        	'title'       => $title_validator,
 	            'description' => 'min:2|max:'.$this->settings->description_length.'',
 		        'tags'        => 'required',
 	        ]);
