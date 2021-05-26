@@ -436,7 +436,7 @@ class AdminController extends Controller {
 		$sql = Images::find($request->id);
 
 		 $rules = array(
-            'title'       => 'required|min:3|max:30',
+            'title'       => 'required|min:1|max:30',
             'description' => 'min:2|max:'.$this->settings->description_length.'',
 	        'tags'        => 'required',
 
